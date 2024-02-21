@@ -4,7 +4,6 @@ import { transformationTypes } from "@/constants";
 import { getUserById } from "@/lib/actions/user.action";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import React from "react";
 
 const AddTransformationTypePage = async ({
   params: { type },
@@ -19,6 +18,7 @@ const AddTransformationTypePage = async ({
   return (
     <>
       <Header title={transformation.title} subtitle={transformation.subTitle} />
+
       <section className="mt-10">
         <TransformationForm
           action="Add"
