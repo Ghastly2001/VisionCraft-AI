@@ -3,22 +3,28 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
 import { navLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
+import { VisionCraftLogo } from "./VisionCraftLogo";
 
 const MobileNav = () => {
   const pathname = usePathname();
   return (
     <header className="header">
       <Link href="/" className="flex items-center gap-2 md:py-2">
-        <Image
+        {/* <Image
           src="/assets/images/logo-text.svg"
           width={180}
           height={28}
           alt="logo"
-        />
+        /> */}
+        {/* <VisionCraftLogo /> */}
+        <div className="flex items-center gap-1">
+          <Image src="/logo-icon.png" height={20} width={20} alt="logo" />
+          <h1 className="text-indigo-500 font-bold text-2xl">VisionCraft AI</h1>
+        </div>
       </Link>
       <nav className="flex gap-2">
         <SignedIn>
@@ -35,12 +41,24 @@ const MobileNav = () => {
             </SheetTrigger>
             <SheetContent className="sheet-content sm:w-64">
               <>
-                <Image
+                {/* <Image
                   src="/assets/images/logo-text.svg"
                   alt="logo"
                   width={152}
                   height={23}
-                />
+                /> */}
+                {/* <VisionCraftLogo /> */}
+                <div className="flex items-center gap-1">
+                  <Image
+                    src="/logo-icon.png"
+                    height={20}
+                    width={20}
+                    alt="logo"
+                  />
+                  <h1 className="text-indigo-500 font-bold text-2xl">
+                    VisionCraft AI
+                  </h1>
+                </div>
                 <ul className="header-nav_elements">
                   {navLinks.slice(0, 6).map((link) => {
                     const isActive = link.route === pathname;
@@ -52,18 +70,20 @@ const MobileNav = () => {
                           isActive && "gradient-text"
                         } p-18 flex whitespace-nowrap text-dark-700`}
                       >
-                        <Link
-                          className="sidebar-link cursor-pointer"
-                          href={link.route}
-                        >
-                          <Image
-                            src={link.icon}
-                            alt="logo"
-                            width={24}
-                            height={24}
-                          />
-                          {link.label}
-                        </Link>
+                        <SheetClose asChild>
+                          <Link
+                            className="sidebar-link cursor-pointer"
+                            href={link.route}
+                          >
+                            <Image
+                              src={link.icon}
+                              alt="logo"
+                              width={24}
+                              height={24}
+                            />
+                            {link.label}
+                          </Link>
+                        </SheetClose>
                       </li>
                     );
                   })}

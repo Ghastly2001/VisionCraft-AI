@@ -7,19 +7,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { Button } from "../ui/button";
+import { VisionCraftLogo } from "./VisionCraftLogo";
 
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="sidebar ">
+    <aside className="sidebar overflow-y-scroll no-scrollbar">
       <div className="flex size-full flex-col gap-4">
         <Link href="/" className="sidebar-logo">
-          <Image
-            src="/assets/images/logo-text.svg"
-            height={28}
-            width={180}
-            alt="logo"
-          />
+          <VisionCraftLogo />
         </Link>
         <nav className="sidebar-nav">
           <SignedIn>
