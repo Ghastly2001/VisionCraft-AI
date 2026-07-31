@@ -23,7 +23,9 @@ const MobileNav = () => {
         {/* <VisionCraftLogo /> */}
         <div className="flex items-center gap-1">
           <Image src="/logo-icon.png" height={20} width={20} alt="logo" />
-          <h1 className="text-indigo-500 font-bold text-2xl">VisionCraft AI</h1>
+          <h1 className="text-dark-700 font-semibold text-2xl">
+            VisionCraft AI
+          </h1>
         </div>
       </Link>
       <nav className="flex gap-2">
@@ -55,7 +57,7 @@ const MobileNav = () => {
                     width={20}
                     alt="logo"
                   />
-                  <h1 className="text-indigo-500 font-bold text-2xl">
+                  <h1 className="text-dark-700 font-semibold text-2xl">
                     VisionCraft AI
                   </h1>
                 </div>
@@ -67,7 +69,7 @@ const MobileNav = () => {
                       <li
                         key={link.route}
                         className={`${
-                          isActive && "gradient-text"
+                          isActive && "text-purple-500 font-semibold"
                         } p-18 flex whitespace-nowrap text-dark-700`}
                       >
                         <SheetClose asChild>
@@ -94,7 +96,10 @@ const MobileNav = () => {
         </SignedIn>
 
         <SignedOut>
-          <Button asChild className="button active bg-cover">
+          <Button
+            asChild
+            className="button bg-purple-500 hover:bg-purple-600 transition-colors text-white"
+          >
             <Link href="/sign-in">Login</Link>
           </Button>
         </SignedOut>

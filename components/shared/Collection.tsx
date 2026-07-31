@@ -51,7 +51,7 @@ export const Collection = ({
       {images.length > 0 ? (
         <ul className="collection-list">
           {images.map((image) => (
-            <Card image={image} key={image._id} />
+            <Card image={image} key={String(image._id)} />
           ))}
         </ul>
       ) : (
@@ -76,7 +76,7 @@ export const Collection = ({
             </p>
 
             <Button
-              className="button w-32 bg-purple-gradient bg-cover text-white"
+              className="button w-32 bg-purple-500 hover:bg-purple-600 transition-colors text-white"
               onClick={() => onPageChange("next")}
               disabled={Number(page) >= totalPages}
             >

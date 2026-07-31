@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "title": "Design System: VisionCraft AI",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Deep Teal",
+        "canonical": "oklch(50% 0.08 192)",
+        "tonalRamp": ["#042f2e", "#134e4a", "#115e59", "#0f766e", "#0d9488", "#14b8a6", "#5eead4", "#f0fdfa"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(21% 0.03 265)",
+        "tonalRamp": ["#020617", "#0f172a", "#1e293b", "#334155", "#64748b", "#94a3b8", "#cbd5e1", "#f8fafc"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page-level headings, one per screen." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings, e.g. 'Recent Edits'." },
+      "body": { "displayName": "Body", "purpose": "Paragraph text, labels, list content." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav items, chips, meta text." }
+    },
+    "shadows": [
+      { "name": "floating", "value": "0 8px 24px -4px rgb(15 23 42 / 0.12)", "purpose": "Dropdowns, popovers, toasts." },
+      { "name": "modal", "value": "0 20px 48px -8px rgb(15 23 42 / 0.2)", "purpose": "Modal/dialog surfaces only." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default easing for hover/focus/state transitions." },
+      { "name": "duration-fast", "value": "150ms", "purpose": "Hover/focus state changes." },
+      { "name": "duration-base", "value": "220ms", "purpose": "Card lift, dropdown open/close." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action, one per view.",
+      "html": "<button class=\"ds-btn-primary\">Generate</button>",
+      "css": ".ds-btn-primary { background: #0f766e; color: #ffffff; padding: 10px 20px; border-radius: 8px; border: none; font-family: 'IBM Plex Sans', ui-sans-serif, system-ui; font-weight: 500; font-size: 0.9375rem; transition: background 150ms cubic-bezier(0.4,0,0.2,1), transform 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #115e59; } .ds-btn-primary:focus-visible { outline: 2px solid #0f766e; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary/ghost action.",
+      "html": "<button class=\"ds-btn-secondary\">Cancel</button>",
+      "css": ".ds-btn-secondary { background: #ffffff; color: #0f172a; padding: 10px 20px; border-radius: 8px; border: 1px solid #e2e8f0; font-family: 'IBM Plex Sans', ui-sans-serif, system-ui; font-weight: 500; font-size: 0.9375rem; transition: background 150ms, border-color 150ms; } .ds-btn-secondary:hover { background: #f8fafc; border-color: #cbd5e1; }"
+    },
+    {
+      "name": "Collection Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Recent edit / image result card.",
+      "html": "<div class=\"ds-card\"><img class=\"ds-card-img\" src=\"\" alt=\"\"/><div class=\"ds-card-title\">Girl in white Tshirt</div></div>",
+      "css": ".ds-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 16px; transition: transform 220ms cubic-bezier(0.4,0,0.2,1), box-shadow 220ms cubic-bezier(0.4,0,0.2,1); } .ds-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -4px rgb(15 23 42 / 0.12); } .ds-card-title { font-family: 'IBM Plex Sans', ui-sans-serif, system-ui; font-weight: 500; font-size: 1rem; color: #0f172a; margin-top: 12px; }"
+    },
+    {
+      "name": "Nav Item (active)",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Active sidebar navigation entry.",
+      "html": "<a class=\"ds-nav-item ds-nav-item-active\">Home</a>",
+      "css": ".ds-nav-item { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-radius: 8px; font-family: 'IBM Plex Sans', ui-sans-serif, system-ui; font-weight: 500; font-size: 0.8125rem; color: #0f172a; transition: background 150ms; } .ds-nav-item:hover { background: #f8fafc; } .ds-nav-item-active { background: #f0fdfa; color: #0f766e; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Search / text input.",
+      "html": "<input class=\"ds-input\" placeholder=\"Search\"/>",
+      "css": ".ds-input { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; font-family: 'IBM Plex Sans', ui-sans-serif, system-ui; font-size: 0.9375rem; color: #0f172a; transition: border-color 150ms; } .ds-input::placeholder { color: #64748b; } .ds-input:focus { outline: none; border-color: #0f766e; box-shadow: 0 0 0 2px rgba(15,118,110,0.15); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Contact Sheet",
+    "overview": "VisionCraft AI is a room where the photographs do the talking. Like a contact sheet or a light table, the interface is a quiet, neutral surface built to let images sit at full color and full attention — everything around them recedes into grayscale structure so nothing competes with the photo being edited. One accent color, a deep teal, marks what's actionable and what's active; it never spreads across gradients, banners, or backgrounds. This system explicitly rejects the generic purple/indigo SaaS gradient look this product shipped with previously.",
+    "keyCharacteristics": [
+      "Grayscale chrome, color-only-where-it-matters",
+      "Flat surfaces with tonal layering instead of drop shadows",
+      "One geometric-technical typeface (IBM Plex Sans) carrying the whole hierarchy through weight",
+      "Structure and whitespace establish importance; no gradients or particle effects"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Deep Teal appears on primary buttons, active/selected states, links, and focus rings — and nowhere else.", "section": "colors" },
+      { "name": "The No-Tint-Everything Rule", "body": "Card borders and shadows stay neutral gray, never accent-tinted.", "section": "colors" },
+      { "name": "The Weight-Not-Width Rule", "body": "Hierarchy is built by moving between 400/500/600 weight and size, never by introducing a second typeface or letter-spaced uppercase eyebrows.", "section": "typography" },
+      { "name": "The Flat-At-Rest Rule", "body": "No shadow is applied to a card, sidebar, or button in its default state. Depth is earned only by genuinely floating above other content.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Deep Teal (#0f766e) only for primary buttons, active nav state, links, and focus rings.",
+      "Do keep every card, sidebar, and button flat at rest; add elevation only for dropdowns/modals/toasts.",
+      "Do keep card/border colors neutral gray regardless of what's near them.",
+      "Do carry hierarchy through IBM Plex Sans weight and size, not a second typeface."
+    ],
+    "donts": [
+      "Don't reintroduce the purple/indigo gradient hero banner, gradient pill buttons, or purple-tinted card shadows/borders.",
+      "Don't use gradient text.",
+      "Don't add decorative particle/sparkle effects to headings or banners.",
+      "Don't default to a warm cream/sand background to seem 'less AI'.",
+      "Don't use a colored border-left/border-right as a stripe accent."
+    ]
+  }
+}
